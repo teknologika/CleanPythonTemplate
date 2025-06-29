@@ -108,3 +108,27 @@ To streamline the renaming process, an automated script `rename_project.sh` is p
     *   Replace `"New Project Title Case"` with your new project title in quotes (e.g., `"My Awesome Project"`).
 
 After the script completes, follow the on-screen instructions to re-install dependencies, run tests, and commit your changes.
+
+## Releases
+
+This project uses GitHub Releases to automate the publishing of packages to PyPI and TestPyPI.
+
+The `publish.yml` GitHub Actions workflow is configured to run only when a new GitHub Release is created. This ensures that publishing is a deliberate action tied to your release process.
+
+**How to Create a Release:**
+
+1.  **Through the GitHub Web Interface (Recommended):**
+    *   Go to your repository on GitHub.
+    *   Click on "Releases" (usually found on the right sidebar or under the "Code" tab).
+    *   Click the "Draft a new release" button.
+    *   Choose an existing Git tag or create a new one (e.g., `v1.0.0`). Creating a new tag here will automatically push it to your repository.
+    *   Provide a release title and description.
+    *   You can also attach binaries or other files if needed.
+    *   Click "Publish release".
+
+2.  **Using the GitHub CLI or API:**
+    *   Create a Git tag locally: `git tag -a v1.0.0 -m "Release v1.0.0"`
+    *   Push the tag to GitHub: `git push origin v1.0.0`
+    *   Then, use the GitHub CLI (`gh release create v1.0.0 --title "Release v1.0.0" --notes "Release notes here"`) or the GitHub API to create the release associated with that tag.
+
+Once a release is "created" (either via the UI or API), the `publish.yml` GitHub Actions workflow will automatically trigger and proceed with building and publishing your package.
