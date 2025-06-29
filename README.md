@@ -132,3 +132,23 @@ The `publish.yml` GitHub Actions workflow is configured to run only when a new G
     *   Then, use the GitHub CLI (`gh release create v1.0.0 --title "Release v1.0.0" --notes "Release notes here"`) or the GitHub API to create the release associated with that tag.
 
 Once a release is "created" (either via the UI or API), the `publish.yml` GitHub Actions workflow will automatically trigger and proceed with building and publishing your package.
+
+## Pre-Commit Hooks
+
+This project uses `pre-commit` to ensure code quality and consistency before commits are made. This helps catch issues early in the development cycle.
+
+**Setup:**
+
+1.  **Install `pre-commit`:**
+    If you don't have `pre-commit` installed globally, you can install it using `uv`:
+    ```bash
+    uv pip install pre-commit
+    ```
+
+2.  **Install the Git hooks:**
+    Navigate to your project root and run:
+    ```bash
+    pre-commit install
+    ```
+
+Once installed, `pre-commit` will automatically run the configured checks (e.g., linting, formatting, type checking) on your staged files before each commit. If any checks fail, the commit will be aborted, allowing you to fix the issues.

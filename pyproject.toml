@@ -11,7 +11,7 @@ authors = [
 ]
 license = { text = "MIT" }
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -41,6 +41,7 @@ dev = [
     "uv>=0.1.0",
     "build",
     "twine",
+    "pre-commit>=3.6.0",
 ]
 
 [tool.flake8]
