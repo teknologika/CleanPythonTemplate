@@ -23,9 +23,7 @@ dependencies = [
     "uvicorn[standard]>=0.24.0",
 ]
 
-[project.scripts]
-cpt-cli = "clean_python_template.cli.main:app"
-cpt-server = "clean_python_template.server.main:app"
+
 
 [project.optional-dependencies]
 dev = [
@@ -37,7 +35,7 @@ dev = [
     "mkdocs>=1.5.3",
     "mkdocs-material>=9.4.7",
     "bandit>=1.7.5",
-    
+
     "uv>=0.1.0",
     "build",
     "twine",
@@ -71,3 +69,6 @@ ignore_missing_imports = true
 
 [tool.black]
 line-length = 88
+
+[tool.bandit]
+exclude_dirs = ["tests"]

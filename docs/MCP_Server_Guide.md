@@ -19611,5 +19611,3 @@ After Claude helps you build your server:
 Remember that Claude can help you modify and improve your server as requirements change over time.
 
 Need more guidance? Just ask Claude specific questions about implementing MCP features or troubleshooting issues that arise.
-
-
